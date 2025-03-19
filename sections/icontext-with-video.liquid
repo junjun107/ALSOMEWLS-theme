@@ -1,0 +1,268 @@
+{{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+ 
+.section{
+  border: 5px solid red;
+
+}
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+    @media (max-width: 768px) {
+    .block-item {
+      flex-direction: column; /* Stack items on mobile */
+      align-items: flex-start; /* Align items to the start */
+      flex: 1 1 100%; /* Full width on mobile */
+    }
+
+    .multicolumn-card__image-wrapper {
+      margin-right: 0; /* Remove margin on mobile */
+      margin-bottom: 10px; /* Add space below image */
+    }
+  }
+    .page-width {
+      max-width: 100%;
+      /* Change max-width to 100% or any value you prefer */
+      padding: 0 20px;
+      /* Adjust padding to give breathing space */
+    }
+
+    .section-container {
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+ 
+    }
+    .block-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for responsive layout */
+    gap: 20px; /* Space between items */
+  }
+
+  .block-item {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    flex: 1 1 calc(50% - 20px); /* Two columns on desktop */
+    box-sizing: border-box; /* Include padding in width */
+  }
+
+  .multicolumn-card__image-wrapper {
+    margin-right: 10px; /* Space between image and text */
+  }
+
+
+    @media screen and (min-width: 750px) {
+      .section-container {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        /* Ensure it takes up the full width */
+      }
+    }
+
+    .left-column {
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    .right-column {
+      flex: 1;
+    }
+
+    .multicolumn-card__video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .multicolumn-card__video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+{%- endstyle -%}
+
+<div class="multicolumn section"style="padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px; padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;">
+  <div class="page-width section-{{ section.id }}-padding isolate">
+    {%- unless section.settings.title == blank -%}
+      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+          {{ section.settings.title }}
+        </h2>
+        
+      </div>
+    {%- endunless -%}
+
+    {% comment %} left-column {% endcomment %}
+    <div class="section-container">
+      <div class="left-column">
+          {{
+                section.settings.image| image_url: width: 500 | image_tag
+              
+              }}
+       <div>{{section.settings.left_column_content}}</div>
+       {% comment %} left col block {% endcomment %}
+        <div class="block-container">
+          {%- for block in section.blocks -%}
+            <div class="block-item">
+              <!-- Display the image if available -->
+              {%- if block.settings.image != blank -%}
+                <div class="multicolumn-card__image-wrapper">
+                  <div class="media" style="width: 100px; height: 100px;">
+                    {{
+                      block.settings.image
+                      | image_url: width: 100, height: 100
+                      | image_tag: width: 100, height: 100, class: 'multicolumn-card__image'
+                    }}
+                  </div>
+                </div>
+              {%- endif -%}
+
+              <!-- Display the title of each block inside left column -->
+              <div>
+                {%- if block.settings.title != blank -%}
+                  <p class="inline-richtext">{{ block.settings.title }}</p>
+                {%- endif -%}
+
+                <!-- Display the link if available -->
+                {%- if block.settings.link_label != blank and block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}">{{ block.settings.link_label }}</a>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <!-- Right Column for Video -->
+      <div class="right-column">
+        {%- if section.settings.product_description_video contains 'youtube'
+          or section.settings.product_description_video contains 'youtu.be'
+        -%}
+          {%- assign video_id = section.settings.product_description_video | split: 'v=' | last | split: '&' | first -%}
+          <div class="multicolumn-card__video-wrapper">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/{{ video_id }}?rel=0"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "List & Video with Columns",
+  "max_blocks": 6,
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.image-with-text.settings.image.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Enter your section title here",
+      "label": "Main Section Title"
+    },
+    {
+      "type": "richtext",
+      "id": "left_column_content",
+      "label": "Left Column Content"
+    },
+    {
+      "type": "text",
+      "id": "product_description_video",
+      "label": "YouTube Video URL",
+      "default": "https://www.youtube.com/watch?v=example"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "default": "Column Title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link Label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "List & Video with Columns",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
