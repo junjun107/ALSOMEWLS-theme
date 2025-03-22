@@ -261,6 +261,18 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "icontext_with_video_GYFpHt": {
+      "type": "icontext-with-video",
+      "settings": {
+        "image": "shopify://shop_images/horizontal_image.png",
+        "title": "Enter your section title here",
+        "left_column_content": "<ul><li>Tool-free snap and lock assembly</li><li>Exceptional strength with 8,000 lbs total weight capacity</li><li>Four adjustable shelves each hold up to 2,000 lbs</li><li>90\" wide x 90\" high x 24\" deep</li><li>Lifetime limited warranty</li></ul>",
+        "product_description_video": "https://www.youtube.com/watch?v=example",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "color_scheme": ""
+      }
     }
   },
   "order": [
@@ -269,6 +281,7 @@
     "featured_collection",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "icontext_with_video_GYFpHt"
   ]
 }
