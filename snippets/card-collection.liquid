@@ -15,11 +15,15 @@
 
 
 <style>
+.card-wrapper {
 
+}
   .card__information {
   transition: background-color 0.3s ease, color 0.3s ease;
   background-color:rgb(233, 246, 236);
-  /* border:2px solid red; */
+  cursor: pointer;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+ padding: 20px 10px;
 }
 .card__information:hover {
   background-color: green;
@@ -28,7 +32,26 @@
 .card__information:hover * {
   color: white;
 }
-
+.card__information p {
+  font-size: 14px;
+  
+}
+.card__heading{
+  font-size: 20px;
+}
+.tag {
+  background: #56d727;
+  border-radius: 50px;
+  font-size: 12px;
+  margin: 10px 10px;
+  color: #24341b;;
+  padding: 5px 12px;
+  text-transform: uppercase;
+  font-style: bold;
+}
+.tag, .card__heading, .card__information p {
+  margin: 10px 10px;
+}
 </style>
 
 {%- liquid
@@ -102,7 +125,8 @@
       <div class="card__content">
         <div class="card__information">
           {% comment %} <div style="background: yellow; padding: 10px;">hello world test 🔥</div> {% endcomment %}
-          <h3 class="card__heading" >
+          <span class="tag">Small Span here</span>
+          <h4 class="card__heading" >
             <a
               {% if card_collection == blank %}
                 role="link" aria-disabled="true"
@@ -117,7 +141,8 @@
                 {{ 'onboarding.collection_title' | t }}
               {%- endif -%}
             </a>
-          </h3>
+          </h4>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam velit eaque, vel minus fugit nam veniam exercitationem</p>
           {%- if card_collection.featured_image == null and card_collection.description != blank -%}
             <p class="card__caption">
               {{- card_collection.description | strip_html | truncatewords: 12 -}}
