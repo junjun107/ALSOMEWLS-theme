@@ -91,69 +91,11 @@
         "layout": "full_bleed",
         "slide_height": "medium",
         "slider_visual": "counter",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
+        "auto_rotate": true,
+        "change_slides_speed": 3,
         "image_behavior": "none",
-        "show_text_below": true,
+        "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
-      }
-    },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 36
       }
     },
     "icontext_with_video_GYFpHt": {
@@ -223,7 +165,7 @@
         "columns_desktop": 3,
         "color_scheme": "scheme-adc71975-425d-4f30-8595-086e67b214e2",
         "show_view_all": false,
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
@@ -317,17 +259,101 @@
         "slider_visual": "counter",
         "auto_rotate": false,
         "change_slides_speed": 5,
-        "show_text_below": true,
+        "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "all",
+        "products_to_show": 8,
+        "title": "热卖产品推荐",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "outline",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_rizTiQ": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_jqh8wf": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Brand Story",
+            "heading_size": "h1"
+          }
+        },
+        "text_w9NETG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At ASOMWLS, we prioritize both performance and sustainability. Our casters are made from eco-friendly materials to minimize environmental impact while delivering durability and efficiency. By offering reliable caster solutions, we help businesses move toward greener operations. Choosing ASOMWLS means choosing responsibility for the future.</p><p></p>",
+            "text_style": "subtitle"
+          }
+        },
+        "caption_kCARJm": {
+          "type": "caption",
+          "settings": {
+            "caption": "Since our founding, ASOMWLS has been dedicated to delivering dependable caster solutions for industries worldwide. Our products are more than just components—they’re essential to productivity and safety. Through continuous innovation and strict quality control, ASOMWLS has become a trusted name in industrial mobility. Every detail matters—and our casters reflect that belief.",
+            "text_style": "subtitle",
+            "text_size": "medium"
+          }
+        },
+        "button_HBaGVP": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_jqh8wf",
+        "text_w9NETG",
+        "caption_kCARJm",
+        "button_HBaGVP"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/an-industrial-complex-underneath-a-grey-sky.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "scheme-adc71975-425d-4f30-8595-086e67b214e2",
+        "color_scheme": "scheme-adc71975-425d-4f30-8595-086e67b214e2",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "slideshow_hgfyUE",
-    "rich_text",
-    "featured_collection",
     "icontext_with_video_GYFpHt",
     "collection_list_FtxUqb",
-    "custom_carousel_with_text_THz9mq"
+    "custom_carousel_with_text_THz9mq",
+    "featured_collection",
+    "image_with_text_rizTiQ"
   ]
 }

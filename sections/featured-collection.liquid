@@ -4,25 +4,51 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 
-{% if section.settings.image_shape == 'blob' %}
-  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
-{%- endif -%}
+<style>
+  .custom-bg{
+    margin-top:10px;
+background: linear-gradient(135deg, rgba(191, 247, 212, 1), rgba(33, 99, 56, 1));  }
+ .my-section--custom-sale-style .price--on-sale .price-item--sale {
+    color: #B43636;
+        font-weight: 600;
+  }
 
-{%- unless section.settings.quick_add == 'none' -%}
-  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
-  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-{%- endunless -%}
+.my-section--custom-sale-style .card-information {
+    margin-left: 10px;
+    margin-right: 10px
+}
+.my-section--custom-sale-style h3 {
+font-size: 14px;
+} 
+.my-section--custom-sale-style .price-item--regular {
+    font-weight: 600;
+  }
+  .my-section--custom-sale-style a{
+    font-weight: 200; /* try 300 or 200 for even lighter */
+  }
+  .my-section--custom-sale-style .card__badge .badge {
+    background-color: #B43636;
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    padding: 0.5em 1em;
+   
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+ .my-section--custom-sale-style .card__heading .full-unstyled-link {
+    text-decoration: none;
+     color: #333333; /* dark gray */
+    letter-spacing: 0.5px; /* slightly wider spacing */
+  }
 
-{%- if section.settings.quick_add == 'standard' -%}
-  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
-{%- endif -%}
+  .my-section--custom-sale-style .card__heading .full-unstyled-link:hover {
+    text-decoration: none;
+  }
 
-{%- if section.settings.quick_add == 'bulk' -%}
-  <script src="{{ 'quick-add-bulk.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
-{%- endif -%}
+</style>
+
+
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -59,7 +85,7 @@
 -%}
 
 <div
-  class="color-{{ section.settings.color_scheme }} isolate gradient"
+  class="color-{{ section.settings.color_scheme }} isolate gradient custom-bg"
 >
   <div
     class="collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}"
@@ -86,6 +112,7 @@
       {%- endif -%}
     </div>
 
+   <div class="my-section--custom-sale-style">
     <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <ul
         id="Slider-{{ section.id }}"
@@ -110,7 +137,6 @@
                 {% render 'card-product',
                   card_product: product,
                   media_aspect_ratio: section.settings.image_ratio,
-                  image_shape: section.settings.image_shape,
                   show_secondary_image: section.settings.show_secondary_image,
                   show_vendor: section.settings.show_vendor,
                   show_rating: section.settings.show_rating,
@@ -151,6 +177,8 @@
           {%- endfor -%}
         {%- endif -%}
       </ul>
+
+      {% comment %} mobile video slider  {% endcomment %}
       {%- if show_mobile_slider or show_desktop_slider -%}
         <div class="slider-buttons">
           <button
@@ -184,6 +212,7 @@
         </div>
       {%- endif -%}
     </slider-component>
+  </div>
 
     {%- if section.settings.show_view_all and more_in_collection -%}
       <div class="center collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
