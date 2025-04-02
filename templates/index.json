@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "image_overlay_opacity": 0,
-            "heading": "Image slide",
+            "heading": "首屏大图轮播1",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
             "button_label": "Button label",
@@ -33,7 +33,7 @@
           "type": "slide",
           "settings": {
             "image_overlay_opacity": 0,
-            "heading": "Image slide",
+            "heading": "首屏大图轮播2",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
             "button_label": "Button label",
@@ -50,7 +50,7 @@
           "type": "slide",
           "settings": {
             "image_overlay_opacity": 0,
-            "heading": "Image slide",
+            "heading": "首屏大图轮播3",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
             "button_label": "Button label",
@@ -67,7 +67,7 @@
           "type": "slide",
           "settings": {
             "image_overlay_opacity": 0,
-            "heading": "Image slide",
+            "heading": "首屏大图轮播4",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
             "button_label": "Button label",
@@ -98,11 +98,57 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "image_with_text_wKByFJ": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_yafBaU": {
+          "type": "heading",
+          "settings": {
+            "heading": "宣传语: 高强度工业脚轮，承载未来",
+            "heading_size": "h1"
+          }
+        },
+        "text_eKzMmD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>适用于物流、制造业、仓储等行业</p>",
+            "text_style": "body"
+          }
+        },
+        "button_UEYMrA": {
+          "type": "button",
+          "settings": {
+            "button_label": "View Products",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yafBaU",
+        "text_eKzMmD",
+        "button_UEYMrA"
+      ],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "right",
+        "section_color_scheme": "scheme-adc71975-425d-4f30-8595-086e67b214e2",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "icontext_with_video_GYFpHt": {
       "type": "icontext-with-video",
       "settings": {
         "image": "shopify://shop_images/horizontal_image.png",
-        "title": "Enter your section title here",
+        "title": "核心卖点展示+视频",
         "left_column_content": "<ul><li>Tool-free snap and lock assembly</li><li>Exceptional strength with 8,000 lbs total weight capacity</li><li>Four adjustable shelves each hold up to 2,000 lbs</li><li>90\" wide x 90\" high x 24\" deep</li><li>Lifetime limited warranty</li></ul>",
         "product_description_video": "https://www.youtube.com/watch?v=example",
         "padding_top": 36,
@@ -116,7 +162,7 @@
         "featured_collection_LJGMjK": {
           "type": "featured_collection",
           "settings": {
-            "collection": "accessories"
+            "collection": "anti-static-casters"
           }
         },
         "featured_collection_ULqLhF": {
@@ -136,33 +182,19 @@
           "settings": {
             "collection": "frontpage"
           }
-        },
-        "featured_collection_7YpNPt": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "outerwear"
-          }
-        },
-        "featured_collection_dT9MYg": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "outerwear"
-          }
         }
       },
       "block_order": [
         "featured_collection_LJGMjK",
         "featured_collection_ULqLhF",
         "featured_collection_HDULPz",
-        "featured_collection_QMhJMV",
-        "featured_collection_7YpNPt",
-        "featured_collection_dT9MYg"
+        "featured_collection_QMhJMV"
       ],
       "settings": {
-        "title": "Collections",
+        "title": "应用场景展示",
         "heading_size": "h1",
         "image_ratio": "square",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "color_scheme": "scheme-adc71975-425d-4f30-8595-086e67b214e2",
         "show_view_all": false,
         "columns_mobile": "2",
@@ -178,7 +210,7 @@
           "type": "slide",
           "settings": {
             "image_overlay_opacity": 0,
-            "heading": "Image slide",
+            "heading": "技术优势slide + columns",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
             "button_label": "Button label",
@@ -273,7 +305,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": false,
@@ -350,6 +382,7 @@
   },
   "order": [
     "slideshow_hgfyUE",
+    "image_with_text_wKByFJ",
     "icontext_with_video_GYFpHt",
     "collection_list_FtxUqb",
     "custom_carousel_with_text_THz9mq",

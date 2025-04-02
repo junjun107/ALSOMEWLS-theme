@@ -9,7 +9,9 @@
  */
 {
   "current": {
-    "logo_width": 90,
+    "logo": "shopify://shop_images/WF_293d4e19-ecb8-4b06-acd1-e13e2fa7a5a7.jpg",
+    "logo_width": 150,
+    "favicon": "shopify://shop_images/WF-fav.jpg",
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
     "type_body_font": "lato_n4",
