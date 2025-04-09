@@ -15,14 +15,15 @@
         "slide_3zNfLK": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/b50091a6-1b4c-43f6-b278-c5754153c8cc.__CR0_0_1464_600_PT0_SX1464_V1.jpg",
             "image_overlay_opacity": 0,
-            "heading": "首屏大图轮播1",
+            "heading": "",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
+            "subheading": "",
+            "button_label": "",
             "link": "",
             "button_style_secondary": false,
-            "show_text_box": true,
+            "show_text_box": false,
             "box_align": "middle-center",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
@@ -32,14 +33,15 @@
         "slide_JE9Cqr": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/55aee4c4-5a95-42cf-835f-0f36a9c537c8.__CR0_0_1464_600_PT0_SX1464_V1.jpg",
             "image_overlay_opacity": 0,
-            "heading": "首屏大图轮播2",
+            "heading": "",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
+            "subheading": "",
+            "button_label": "",
             "link": "",
             "button_style_secondary": false,
-            "show_text_box": true,
+            "show_text_box": false,
             "box_align": "middle-center",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
@@ -49,14 +51,15 @@
         "slide_p9qj7c": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/a4bc1be6-d310-4863-8856-90b797913b92.__CR0_0_1464_600_PT0_SX1464_V1.jpg",
             "image_overlay_opacity": 0,
-            "heading": "首屏大图轮播3",
+            "heading": "",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
+            "subheading": "",
+            "button_label": "",
             "link": "",
             "button_style_secondary": false,
-            "show_text_box": true,
+            "show_text_box": false,
             "box_align": "middle-center",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
@@ -66,14 +69,15 @@
         "slide_GDqKMW": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/a985e04b-d72c-4170-bda6-e3de57f8ed4f.__CR0_0_1464_600_PT0_SX1464_V1.jpg",
             "image_overlay_opacity": 0,
-            "heading": "首屏大图轮播4",
+            "heading": "",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
+            "subheading": "",
+            "button_label": "",
             "link": "",
             "button_style_secondary": false,
-            "show_text_box": true,
+            "show_text_box": false,
             "box_align": "middle-center",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
@@ -88,14 +92,46 @@
         "slide_GDqKMW"
       ],
       "settings": {
-        "layout": "full_bleed",
-        "slide_height": "medium",
+        "layout": "grid",
+        "slide_height": "adapt_image",
         "slider_visual": "counter",
         "auto_rotate": true,
         "change_slides_speed": 3,
         "image_behavior": "none",
         "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "image_banner_dPNJPm": {
+      "type": "image-banner",
+      "blocks": {
+        "buttons_fkr3nq": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "buttons_fkr3nq"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/4ef6031c-7f13-4f09-b209-4c7f5bbecea9.__CR0_0_1464_600_PT0_SX1464_V1.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-right",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
       }
     },
     "image_with_text_wKByFJ": {
@@ -129,6 +165,7 @@
         "text_eKzMmD",
         "button_UEYMrA"
       ],
+      "disabled": true,
       "settings": {
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -146,14 +183,27 @@
     },
     "icontext_with_video_GYFpHt": {
       "type": "icontext-with-video",
+      "blocks": {
+        "column_WGBhVK": {
+          "type": "column",
+          "settings": {
+            "title": "Column Title",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_WGBhVK"
+      ],
       "settings": {
-        "image": "shopify://shop_images/horizontal_image.png",
-        "title": "核心卖点展示+视频",
-        "left_column_content": "<ul><li>Tool-free snap and lock assembly</li><li>Exceptional strength with 8,000 lbs total weight capacity</li><li>Four adjustable shelves each hold up to 2,000 lbs</li><li>90\" wide x 90\" high x 24\" deep</li><li>Lifetime limited warranty</li></ul>",
-        "product_description_video": "https://www.youtube.com/watch?v=example",
+        "image": "shopify://shop_images/High_Load.png",
+        "title": "",
+        "left_column_content": "<p><strong>PERFORMANCE ADVANTAGES</strong></p><p><strong>Durometer</strong>: 95 Shore A(+5)</p><p><strong>Tensile Strength</strong>: 20000 PSI</p><p><strong>Shock Absorption</strong>: Excellent</p><p><strong>Wheel Core</strong>: Steel Cast Iron (Higher durability)</p><p><strong>Scenarios</strong>: Warehousing and logistics equipment, aerospace equipment, medical equipment, utility equipment, large equipment/storage shelves (epoxy floor friendly)</p>",
+        "product_description_video": "https://www.youtube.com/watch?v=2oQ51NVipVE",
         "padding_top": 36,
         "padding_bottom": 36,
-        "color_scheme": ""
+        "color_scheme": "scheme-adc71975-425d-4f30-8595-086e67b214e2"
       }
     },
     "collection_list_FtxUqb": {
@@ -162,39 +212,47 @@
         "featured_collection_LJGMjK": {
           "type": "featured_collection",
           "settings": {
-            "collection": "anti-static-casters"
+            "collection": "industrial-casters",
+            "tag_label": "Casters",
+            "collection_des": "Primarily 2\" wide, the most popular casters for industrial carts—used on stock, platform, and lumber carts—offering plate mounts and a range of wheel options."
+          }
+        },
+        "featured_collection_n33TrA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "manufacturing-plants",
+            "tag_label": "Small Span here",
+            "collection_des": "Power your production line with industrial-grade casters—engineered for automotive, agriculture & food processing. Built tougher to move heavier loads effortlessly"
           }
         },
         "featured_collection_ULqLhF": {
           "type": "featured_collection",
           "settings": {
-            "collection": "frontpage"
+            "collection": "metalworking",
+            "tag_label": "Casters",
+            "collection_des": "Medical casters for autoclaves, IV carts & wheelchairs—engineered for critical care mobility. Heat-resistant, brake-ready & floor-safe options."
           }
         },
-        "featured_collection_HDULPz": {
+        "featured_collection_xQy3y4": {
           "type": "featured_collection",
           "settings": {
-            "collection": "tops"
-          }
-        },
-        "featured_collection_QMhJMV": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "frontpage"
+            "collection": "glassworks",
+            "tag_label": "Casters",
+            "collection_des": "Upgrade furniture with premium casters for tables, chairs, cabinets & DIY projects. Combine style & function—replace flimsy stock wheels with durable, smooth-rolling alternatives."
           }
         }
       },
       "block_order": [
         "featured_collection_LJGMjK",
+        "featured_collection_n33TrA",
         "featured_collection_ULqLhF",
-        "featured_collection_HDULPz",
-        "featured_collection_QMhJMV"
+        "featured_collection_xQy3y4"
       ],
       "settings": {
-        "title": "应用场景展示",
+        "title": "<strong>APPLICATIONS</strong>",
         "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 4,
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
         "color_scheme": "scheme-adc71975-425d-4f30-8595-086e67b214e2",
         "show_view_all": false,
         "columns_mobile": "2",
@@ -209,14 +267,33 @@
         "slide_hQppKh": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/e62c300a-b76e-4f87-aa22-a42cb06863f0.__CR0_0_1464_600_PT0_SX1464_V1.jpg",
             "image_overlay_opacity": 0,
-            "heading": "技术优势slide + columns",
+            "heading": "",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
+            "subheading": "",
+            "button_label": "",
             "link": "",
             "button_style_secondary": false,
-            "show_text_box": true,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_eBfhRf": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/f1d825d1-b849-47fb-b203-4ef59fa932c2.__CR0_0_1464_600_PT0_SX1464_V1.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
             "box_align": "middle-center",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
@@ -226,8 +303,19 @@
         "column_P9LyyX": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "column_image": "shopify://shop_images/ChatGPT_Image_Apr_7_2025_03_22_23_PM.png",
+            "title": "<strong>Stain Resistant</strong>",
+            "text": "<p>High purity cast iron offers exceptional strength and wear resistance, while advanced high temperature coating ensures long-lasting rust protection.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_8iXUqh": {
+          "type": "column",
+          "settings": {
+            "column_image": "shopify://shop_images/ChatGPT_Image_Apr_7_2025_03_22_25_PM.png",
+            "title": "<strong>Durability</strong>",
+            "text": "<p>Engineered with advanced seamless welding for unmatched structural integrity, paired with a robust high-load capacity design to handle extreme weight and stress</p>",
             "link_label": "",
             "link": ""
           }
@@ -235,63 +323,28 @@
         "column_crMUV4": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "column_image": "shopify://shop_images/ChatGPT_Image_Apr_7_2025_03_22_21_PM.png",
+            "title": "<strong>Floor Protective</strong>",
+            "text": "<p>Featuring a sleek design and top-grade polyurethane construction, engineered for silent operation, scratch-resistant durability, and superior floor protection</p>",
             "link_label": "",
             "link": ""
-          }
-        },
-        "column_ULTPEY": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_cNwFxW": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "slide_eBfhRf": {
-          "type": "slide",
-          "settings": {
-            "image_overlay_opacity": 0,
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": true,
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-1"
           }
         }
       },
       "block_order": [
         "slide_hQppKh",
+        "slide_eBfhRf",
         "column_P9LyyX",
-        "column_crMUV4",
-        "column_ULTPEY",
-        "column_cNwFxW",
-        "slide_eBfhRf"
+        "column_8iXUqh",
+        "column_crMUV4"
       ],
       "settings": {
-        "layout": "full_bleed",
-        "slide_height": "medium",
-        "slider_visual": "counter",
+        "layout": "grid",
+        "slide_height": "adapt_image",
+        "slider_visual": "numbers",
         "auto_rotate": false,
-        "change_slides_speed": 5,
-        "show_text_below": false,
+        "change_slides_speed": 3,
+        "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
       }
     },
@@ -364,7 +417,7 @@
         "button_HBaGVP"
       ],
       "settings": {
-        "image": "shopify://shop_images/an-industrial-complex-underneath-a-grey-sky.jpg",
+        "image": "shopify://shop_images/fadd4ea6-4cf2-40ac-840c-07a6d1a254d7.__CR0_0_1464_600_PT0_SX1464_V1.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -382,6 +435,7 @@
   },
   "order": [
     "slideshow_hgfyUE",
+    "image_banner_dPNJPm",
     "image_with_text_wKByFJ",
     "icontext_with_video_GYFpHt",
     "collection_list_FtxUqb",

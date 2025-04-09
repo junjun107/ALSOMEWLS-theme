@@ -1,34 +1,39 @@
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
-{{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'section-multicolumn.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
 <style>
-
-}
-  .multicolumn{
+ .multicolumn {
   background-color:#F0F7F4
 }
-{% comment %} .multicolumn-card {
-border:4px solid red;
 
-} {% endcomment %}
-.multicolumn-card {
-    background-color: rgb(154 187 140);
-border:1px solid green;
-border-radius:10px;
+
+.multicolumn-card__image-wrapper img{
+  height:100px;
+  width:100px;
 
 }
 
-  .multicolumn-card__image-wrapper img{
-    height:100px;
-    width:100px;
-  }
-  .slideshow__controls {
-  border:none
-  }
+.slideshow__controls {
+border:none
+}
+.multicolumn-card__info {
+  margin-bottom: 0;
+}
+.multicolumn-list__item {
+  align-self: flex-start !important; /* prevent stretching */
+  
+}
+.multicolumn-list {
+align-items: flex-start !important;
+}
+.multicolumn-list {
+  height: 300px;
+  overflow: hidden;
+}
 @media screen and (max-width: 749px) {
-  .multicolumn-list.slider {
+  {% comment %} .multicolumn-list.slider {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
@@ -39,7 +44,7 @@ border-radius:10px;
   .multicolumn-list__item {
     width: 100% !important;
     flex: none !important;
-    display: flex;
+    display: block;
     justify-content: center;
   }
 
@@ -65,6 +70,31 @@ border-radius:10px;
     max-width: 100%;
     height: auto;
     display: block;
+  } {% endcomment %}
+   .multicolumn-list {
+    height: 200px;
+    overflow-y: auto; /* or hidden */
+  }
+  .multicolumn-card__image-wrapper img {
+  width: 50%;
+  height:auto;
+  margin:0 auto;
+  padding:5px
+  }
+
+  .multicolumn-card__info {
+    text-align: center;
+    font-size: 12px;
+    padding:5px;
+  }
+
+  .multicolumn-card__info h3 {
+    font-size: 14px;
+  }
+
+  .multicolumn-card__info .rte,
+  .multicolumn-card__info a {
+    font-size: 12px;
   }
 }
 
@@ -356,7 +386,6 @@ border-radius:10px;
     <div
       class="page-width section-{{ section.id }}-padding isolate"
     >
-      {% comment %} column on mobile slides {% endcomment %}
       <slider-component class="slider-mobile-gutter">
         <ul
           class="multicolumn-list contains-content-container grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop{% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}"
@@ -387,12 +416,9 @@ border-radius:10px;
               id="Slide-{{ section.id }}-{{ forloop.index }}"
               class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}"
               {{ block.shopify_attributes }}
-             
-            
             >
               <div class="multicolumn-card content-container">
-                {% comment %} show column image if not empty {% endcomment %}
-                
+                {% comment %} show column image if not empty {% endcomment %}            
                   {%- if block.settings.column_image != blank -%}
                   <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' %} multicolumn-card-spacing{% endif %}">
                    

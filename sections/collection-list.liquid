@@ -2,6 +2,21 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
+<style>
+.custom-grid {
+
+
+}
+.collection-list-wrapper-center {
+
+  display: flex;
+  justify-content: center;
+}
+
+.collection-list {
+  width: auto;
+}
+</style>
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -14,6 +29,7 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  
 {%- endstyle -%}
 
 {%- liquid
@@ -49,8 +65,9 @@
     {%- endunless -%}
 
     <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-      <ul
-        class="collection-list contains-card contains-card--collection{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items"
+      <div class="collection-list-wrapper-center">
+              <ul
+        class="collection-list custom-grid contains-card contains-card--collection{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items"
         id="Slider-{{ section.id }}"
         role="list"
       >
@@ -65,6 +82,9 @@
           <li
             id="Slide-{{ section.id }}-{{ forloop.index }}"
             class="collection-list__item grid__item{% if show_mobile_slider %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            
+            {% comment %} border:3px solid red {% endcomment %}
+      
             {{ block.shopify_attributes }}
           
             {% if settings.animations_reveal_on_scroll %}
@@ -79,12 +99,16 @@
               card_collection: block.settings.collection,
               media_aspect_ratio: section.settings.image_ratio,
               columns: columns,
-              placeholder_image: placeholder_image
+              placeholder_image: placeholder_image,
+              tag_label: block.settings.tag_label,
+              collection_des: block.settings.collection_des
             %}
       
           </li>
         {%- endfor -%}
       </ul>
+      </div>
+
       {%- if show_mobile_slider -%}
         <div class="slider-buttons">
           <button
@@ -288,9 +312,21 @@
           "type": "collection",
           "id": "collection",
           "label": "t:sections.collection-list.blocks.featured_collection.settings.collection.label"
-        }
+        },
+        {
+      "type": "text",
+      "id": "tag_label",
+      "label": "Tag label",
+      "default": "Small Span here"
+        },
+        {
+        "type": "textarea",
+        "id": "collection_des",
+        "label": "Collection Description",
+        "default": "This is a longer description for the collection card."
+      }
       ]
-    }
+    },
   ],
   "presets": [
     {

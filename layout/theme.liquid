@@ -290,12 +290,13 @@
         onload="this.media='all'"
       >
     {%- endif -%}
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script>
       if (Shopify.designMode) {
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -374,3 +375,10 @@
     {%- endif -%}
   </body>
 </html>
+<style>
+@media only screen and (min-width: 769px) {
+	.header__menu-item {
+		font-size: 18px; 
+	}
+}
+</style>

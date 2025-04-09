@@ -15,7 +15,19 @@
 
 
 <style>
+  .card--standard .card__caption {
+  display: block !important;
+}
+.collection-des {
+  font-size: 12px;
+  text-align: left;
+  color: #567B56;
+  line-height: 1.4;
+  padding: 10px 10px;
+  
+}
 .card-wrapper {
+{% comment %} border:3px solid green; {% endcomment %}
 
 }
   .card__information {
@@ -38,6 +50,7 @@
 }
 .card__heading{
   font-size: 20px;
+  
 }
 .tag {
   background: #56d727;
@@ -72,7 +85,13 @@
   endif
 -%}
 
-<div class="card-wrapper animate-arrow {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% else %}collection-card-wrapper{% endif %}" >
+<div class="card-wrapper animate-arrow 
+  {% comment %} {% if wrapper_class and wrapper_class != 'none' %}
+   {{ wrapper_class }}
+  {% else %}collection-card-wrapper
+  {% endif %} {% endcomment %}
+   "
+   >
   <div
     class="
       card
@@ -125,7 +144,9 @@
       <div class="card__content">
         <div class="card__information">
           {% comment %} <div style="background: yellow; padding: 10px;">hello world test 🔥</div> {% endcomment %}
-          <span class="tag">Small Span here</span>
+         {% if tag_label %}
+  <span class="tag">{{ tag_label }}</span>
+{% endif %}
           <h4 class="card__heading" >
             <a
               {% if card_collection == blank %}
@@ -142,8 +163,14 @@
               {%- endif -%}
             </a>
           </h4>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam velit eaque, vel minus fugit nam veniam exercitationem</p>
-          {%- if card_collection.featured_image == null and card_collection.description != blank -%}
+
+{% if collection_des.size >= 200 %}
+  <p class="collection-des">{{ collection_des | truncate: 197, "..." }}</p>
+{% else %}
+  <p class="collection-des">{{ collection_des }}</p>
+{% endif %}
+
+ {%- if card_collection.featured_image == null and card_collection.description != blank -%}
             <p class="card__caption">
               {{- card_collection.description | strip_html | truncatewords: 12 -}}
               <span class="icon-wrap">
