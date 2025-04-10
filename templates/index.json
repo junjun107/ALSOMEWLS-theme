@@ -183,19 +183,6 @@
     },
     "icontext_with_video_GYFpHt": {
       "type": "icontext-with-video",
-      "blocks": {
-        "column_WGBhVK": {
-          "type": "column",
-          "settings": {
-            "title": "Column Title",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_WGBhVK"
-      ],
       "settings": {
         "image": "shopify://shop_images/High_Load.png",
         "title": "",
@@ -353,8 +340,8 @@
       "settings": {
         "collection": "all",
         "products_to_show": 8,
-        "title": "热卖产品推荐",
-        "heading_size": "h2",
+        "title": "<strong>In-Demand Industrial Casters</strong>",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",

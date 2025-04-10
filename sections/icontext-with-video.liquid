@@ -2,27 +2,7 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-
-    @media (max-width: 768px) {
-    .block-item {
-      flex-direction: column; /* Stack items on mobile */
-      align-items: flex-start; /* Align items to the start */
-      flex: 1 1 100%; /* Full width on mobile */
-    }
-
-    .multicolumn-card__image-wrapper {
-      margin-right: 0; /* Remove margin on mobile */
-      margin-bottom: 10px; /* Add space below image */
-    }
-  }
-    .page-width {
+   .page-width {
       max-width: 100%;
       /* Change max-width to 100% or any value you prefer */
       padding: 0 20px;
@@ -51,18 +31,17 @@
   .multicolumn-card__image-wrapper {
     margin-right: 10px; /* Space between image and text */
   }
+ .left-column-image {
+  max-width: 100%; /* Prevent stretching */
+  width: 100%;
+}
 
-
-    @media screen and (min-width: 750px) {
-      .section-container {
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        /* Ensure it takes up the full width */
-      }
-    }
-
-    .left-column {
+.left-column-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+  .left-column {
       flex: 1;
       padding-right: 20px;
     }
@@ -88,6 +67,45 @@
       height: 100%;
       border: 0;
     }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    .section-container {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        /* Ensure it takes up the full width */
+      }
+  }
+    @media (max-width: 768px) {
+    .block-item {
+      flex-direction: column; /* Stack items on mobile */
+      align-items: flex-start; /* Align items to the start */
+      flex: 1 1 100%; /* Full width on mobile */
+    }
+    .multicolumn-card__image-wrapper {
+      margin-right: 0; /* Remove margin on mobile */
+      margin-bottom: 10px; /* Add space below image */
+    }
+
+    .left-column-image{
+      border:4px solid red;
+      max-width: 200px;
+    }
+.left-column-image image{
+  width: 100%;       /* Makes image fill the container */
+    height: auto;      /* Keeps aspect ratio */
+    display: block;
+}
+.left-column-content{
+  margin:0 15px;
+}
+  }
+
+   
 {%- endstyle -%}
 
 <div class="multicolumn section"style="padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px; padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;">
@@ -104,11 +122,12 @@
     {% comment %} left-column {% endcomment %}
     <div class="section-container">
       <div class="left-column">
-          {{
-                section.settings.image| image_url: width: 500 | image_tag
-              
-              }}
-       <div>{{section.settings.left_column_content}}</div>
+        <div class="left-column-image">
+          {{ section.settings.image | image_url: width: 500 | image_tag: width: nil, height: nil }}
+
+        </div>
+          
+       <div class="left-column-content">{{section.settings.left_column_content}}</div>
        {% comment %} left col block {% endcomment %}
         <div class="block-container">
           {%- for block in section.blocks -%}
@@ -116,7 +135,7 @@
               <!-- Display the image if available -->
               {%- if block.settings.image != blank -%}
                 <div class="multicolumn-card__image-wrapper">
-                  <div class="media" style="width: 100px; height: 100px;">
+                  <div class="media">
                     {{
                       block.settings.image
                       | image_url: width: 100, height: 100
