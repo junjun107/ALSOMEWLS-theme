@@ -338,7 +338,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "manufacturing-plants",
+        "collection": "heavy-duty-casters",
         "products_to_show": 8,
         "title": "<strong>In-Demand Industrial Casters</strong>",
         "heading_size": "h1",
